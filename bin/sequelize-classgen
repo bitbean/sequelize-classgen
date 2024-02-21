@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+// NOTE: Do as little work in here as possible. Keep most code in src/*.ts.
+
+require("../lib/generate-models").main();

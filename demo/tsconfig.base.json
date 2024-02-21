@@ -1,0 +1,46 @@
+  // See also https://github.com/sindresorhus/tsconfig/blob/main/tsconfig.json
+  {
+    "extends": "@tsconfig/node18/tsconfig.json",
+    "compilerOptions": {
+      //
+      // #region Compile a "type": "module" package.json (ESM):
+      // "esModuleInterop": false,
+      // "resolveJsonModule": false,
+      // #endregion
+      //
+      // #region Compile package.json (CommonJS):
+      "esModuleInterop": true,
+      "importHelpers": true,
+      // #endregion
+      //
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "declaration": false,
+      "newLine": "lf",
+      // "noEmitOnError": true,
+      // "noFallthroughCasesInSwitch": true,
+      "noImplicitOverride": true,
+      // "noImplicitReturns": true,
+      "noUncheckedIndexedAccess": true,
+      "noUnusedLocals": false,
+      // "noUnusedParameters": true,
+      // "noImplicitAny": true,
+      // "resolveJsonModule": true,
+      "skipDefaultLibCheck": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "strict": true,
+      "noErrorTruncation": true,
+      // "stripInternal": true,
+      // "types": [
+      //   "node",
+      //   "./global.d.ts" // <- For some reason including this, requires "node"
+      // ]
+    },
+    // #region Compile a "type": "module" package.json (ESM):
+    // "ts-node": {
+    //   "esm": true,
+    //   "files": true,
+    // },
+    // #endregion
+  }
