@@ -8,6 +8,25 @@ import { User } from "./User";
 import { Role, RoleId } from "./Role";
 
 export default function initCustom(sequelize: Sequelize) {
+  // #region Virtual Field example
+  //
+  // If you need to add any virtual fields to your models, you can
+  // initialize those here.
+  // See https://sequelize.org/api/v6/class/src/data-types.js~virtual
+  //
+  // sequelize.define("user", {
+  //   myVirtualField: {
+  //     type: DataTypes.VIRTUAL, // <- Import DataTypes from sequelize!
+  //     set: function(this: User, val: string) {...}
+  // }});
+  //
+  // Remember to also add the virtual field type to the extended
+  // `interface User` below...
+  //
+  // NOTE: I'm not sure if you should add virtual fields before or after
+  // declaring the relations like hasOne, etc.
+  //
+  // #endregion
   User.hasOne(Role, { as: "mainRole", foreignKey: "main_role_id" });
 }
 
